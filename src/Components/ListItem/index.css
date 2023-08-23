@@ -1,0 +1,33 @@
+.list-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border: 1px solid #f8fafc;
+  width: 250px;
+  color: #f8fafc;
+  margin: 30px;
+}
+.letter-icon {
+  height: 50px;
+  width: 50px;
+  border-radius: 25px;
+  background-color: green;
+  margin-top: 40px;
+}
+.letter {
+  font-size: 22px;
+  padding-left: 22px;
+  margin-top: 8px;
+}
+.stars {
+  width: 100px;
+}
+.delete-img {
+  height: 25px;
+  width: 25px;
+}
+.delete-btn {
+  background-color: transparent;
+  border-width: 0px;
+  padding-top: 50px;
+}
