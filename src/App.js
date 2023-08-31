@@ -58,7 +58,7 @@ class App extends Component {
   deleteItem = id => {
     const {passwordList} = this.state
     const filteredList = passwordList.filter(each => each.id !== id)
-    const newCount = passwordList.length - 1
+    const newCount = passwordList.length
     if (newCount === 0) {
       this.setState(prevState => ({empty: !prevState.empty, count: 0}))
     } else {
@@ -74,7 +74,15 @@ class App extends Component {
   }
 
   render() {
-    const {passwordList, count, empty, searchInput, checkbox} = this.state
+    const {
+      website,
+      password,
+      username,
+      passwordList,
+      empty,
+      searchInput,
+      checkbox,
+    } = this.state
     const searchResult = passwordList.filter(each =>
       each.website.includes(searchInput),
     )
@@ -100,6 +108,7 @@ class App extends Component {
                   placeholder="Enter Website"
                   className="website"
                   onChange={this.onChangeWebsite}
+                  value={website}
                 />
               </div>
               <div className="combined-input">
@@ -113,6 +122,7 @@ class App extends Component {
                   placeholder="Enter Username"
                   className="username"
                   onChange={this.onChangeUsername}
+                  value={username}
                 />
               </div>
               <div className="combined-input">
@@ -126,6 +136,7 @@ class App extends Component {
                   placeholder="Enter Password"
                   className="password-input"
                   onChange={this.onChangePassword}
+                  value={password}
                 />
               </div>
             </div>
@@ -145,7 +156,7 @@ class App extends Component {
           <div className="heading-container">
             <div className="count-container">
               <h1 className="heading">Your Passwords</h1>
-              <p className="count">{count}</p>
+              <p className="count">{searchResult.length}</p>
             </div>
             <div className="search-container">
               <img
